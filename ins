@@ -1,0 +1,13 @@
+copy the input files to a directory and then copy the directory (input) to hdfs
+(hadoop fs -copyFromLocal input/)
+
+
+PYTHON PROCEDURE:
+	create mapper.py and reducer.py (refer attached files)
+
+	use	:	chmod +x mapper.py
+			chmod +x reducer.py
+		
+	run using the command:	
+		hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.9.0.jar -file mapper.py -mapper mapper.py -file reducer.py -reducer reducer.py -input input/* -output output
+	
